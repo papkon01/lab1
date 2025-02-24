@@ -15,5 +15,6 @@ print(url)
 
 
 with requests.get(url) as response:  # το αντικείμενο response
-    print(response.text)
-   #more(html)
+    print("\nRESPONSE HEADER")
+    for key, value in response.headers.items():
+        print(f"{key:30s} {value}")
