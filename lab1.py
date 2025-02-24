@@ -17,6 +17,8 @@ if not url.startswith('https://'):
     
 print(url)
 
-##with requests.get(url) as response:  # το αντικείμενο response
-    #html = response.text
-   # more(html)
+
+with requests.get(url) as response:  # το αντικείμενο response
+    print("\nRESPONSE HEADER")
+    for key, value in response.headers.items():
+        print(f"{key:30s} {value}")
