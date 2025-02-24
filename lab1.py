@@ -10,7 +10,11 @@ def more(text):
             if reply == 'n':
                 break
 
-url = input("Enter URL:\t ")  # προσδιορισμός του url
+url = input("Enter URL:\t ")
+  
+if not url.startswith('https://'):
+    url = 'https://' + url 
+    
 print(url)
 
 ##with requests.get(url) as response:  # το αντικείμενο response
