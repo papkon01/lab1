@@ -1,4 +1,4 @@
-import requests  # εισαγωγή της βιβλιοθήκης
+import requests  
 
 def more(text):
     count = 0
@@ -22,3 +22,14 @@ with requests.get(url) as response:  # το αντικείμενο response
     print("\nRESPONSE HEADER")
     for key, value in response.headers.items():
         print(f"{key:30s} {value}")
+
+server_info = response.headers.get("Server", "Unknown")
+print(f"\nServer Information: {server_info}")
+
+cookies = response.cookies
+if cookies:
+    print("\n=== Cookies Set by the Server ===")
+    for cookie in cookies:
+        print(f"{cookie.name}: {cookie.value}")
+else:
+    print("\nNo cookies were set by the server.")
