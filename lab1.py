@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-url = input("Enter URL:\t ")
+url = input("Enter URL:  ")
   
 if not url.startswith('https://'):
     url = 'https://' + url 
